@@ -5,14 +5,19 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
 public class KillThePillow extends AppCompatActivity {
+    /* Every class deserves an own pillow! */
+    private Pillow p1 = new Pillow();
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -160,4 +165,32 @@ public class KillThePillow extends AppCompatActivity {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+    
+    //Init pillow, set hp to 100
+    public void InitializePillow(View view){
+        p1.SetHealth(100);
+        Log.d("myTag",(Integer.toString(p1.Health())));
+    }
+    
+    //Hit pillow with desired strength, currently with constant 10hp out of 100hp
+    public void HitPillow(View view){
+        float alpha;
+        p1.Hit(10);
+        ProgressBar myProgress = (ProgressBar) findViewById(R.id.progressBar);
+        myProgress.setProgress(100-p1.Health());
+
+        //For "green" image currently invisible
+        alpha = (float)(p1.Health()/100.00);
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setAlpha(alpha);
+        Log.d("myTag",(Float.toString(alpha)));
+
+        //For "red" imageview
+        alpha = (float)((100-p1.Health())/100.00);
+        ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
+        imageView2.setAlpha(alpha);
+        Log.d("myTag",(Float.toString(alpha)));
+
+    }
+    
 }
