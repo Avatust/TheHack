@@ -90,9 +90,12 @@ public class KillThePillow extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        InitializePillow();
+
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_kill_the_pillow);
+        setContentView(R.layout.fight_scene);
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
@@ -167,7 +170,7 @@ public class KillThePillow extends AppCompatActivity {
     }
     
     //Init pillow, set hp to 100
-    public void InitializePillow(View view){
+    public void InitializePillow(){
         p1.SetHealth(100);
         Log.d("myTag",(Integer.toString(p1.Health())));
     }
@@ -176,18 +179,18 @@ public class KillThePillow extends AppCompatActivity {
     public void HitPillow(View view){
         float alpha;
         p1.Hit(10);
-        ProgressBar myProgress = (ProgressBar) findViewById(R.id.progressBar);
+        ProgressBar myProgress = (ProgressBar) findViewById(R.id.punch_progressbar);
         myProgress.setProgress(100-p1.Health());
 
         //For "green" image currently invisible
         alpha = (float)(p1.Health()/100.00);
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        ImageView imageView = (ImageView) findViewById(R.id.pillow_background);
         imageView.setAlpha(alpha);
         Log.d("myTag",(Float.toString(alpha)));
 
         //For "red" imageview
         alpha = (float)((100-p1.Health())/100.00);
-        ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
+        ImageView imageView2 = (ImageView) findViewById(R.id.red_blood);
         imageView2.setAlpha(alpha);
         Log.d("myTag",(Float.toString(alpha)));
 

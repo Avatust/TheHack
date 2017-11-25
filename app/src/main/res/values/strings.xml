@@ -20,4 +20,6 @@
     <string name="punch_text">punch text</string>
     <string name="exit_image">Exit image</string>
     <string name="select_the_most_relaxing_color">Select the most relaxing color!</string>
+    <string name="blood">Blood</string>
+    <string name="button">Button</string>
 </resources>
