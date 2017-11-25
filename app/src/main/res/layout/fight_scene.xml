@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/pillow_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/pillow_background"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/pillow_0006_grey" />
+
+    <ProgressBar
+        android:id="@+id/punch_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/punch_text"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:contentDescription="@string/punch_text"
+        android:text="@string/punch"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+</FrameLayout>
