@@ -3,4 +3,9 @@
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="background_for_launch_screen">Background for launch screen</string>
+    <string name="pink_pillow_selection">Pink pillow selection</string>
+    <string name="red_pillow_string_pink_pillow_selection">Red pillow @string/pink_pillow_selection</string>
+    <string name="yellow_pillow_selection">Yellow pillow selection</string>
+    <string name="selectedimage">SelectedImage</string>
 </resources>
