@@ -1,6 +1,7 @@
 package com.example.thehack;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -102,6 +103,7 @@ public class KillThePillow extends AppCompatActivity {
         mContentView = findViewById(R.id.fullscreen_content);
 
 
+
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +116,12 @@ public class KillThePillow extends AppCompatActivity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.start_button).setOnTouchListener(mDelayHideTouchListener);
+    }
+
+    /** Called when the user taps the Start! button */
+    public void startPillows(View view) {
+        Intent intent = new Intent(this, PillowsSelection.class);
+        startActivity(intent);
     }
 
     @Override
