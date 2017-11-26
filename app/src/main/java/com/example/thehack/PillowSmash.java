@@ -36,10 +36,11 @@ public class PillowSmash extends AppCompatActivity {
 
         float alpha;
 
-        p1.Hit(10);
+        p1.Hit(1);
         ProgressBar myProgress = (ProgressBar) findViewById(R.id.punch_progressbar);
         myProgress.setProgress(100-p1.Health());
 
+        /*
         //For "green" image currently invisible
         alpha = (float)(p1.Health()/100.00);
         ImageView imageView = (ImageView) findViewById(R.id.pillow_background);
@@ -52,7 +53,43 @@ public class PillowSmash extends AppCompatActivity {
         imageView2.setAlpha(alpha);
         Log.d("myTag",(Float.toString(alpha)));
 
+        */
     }
+
+    /* TODO: Next step in development
+
+    //When data comes from sensor
+    public void OnImpact(float impact){
+        //HitPillow();
+    }
+
+
+
+     //Hit pillow with desired strength, gets value from sensor and adds it to progressbar depending
+     // acceleration
+     public void HitPillow(View view, float impact){
+
+     float alpha;
+
+     p1.Hit(impact);
+     ProgressBar myProgress = (ProgressBar) findViewById(R.id.punch_progressbar);
+     myProgress.setProgress(100-p1.Health());
+
+     //For "green" image currently invisible
+     alpha = (float)(p1.Health()/100.00);
+     ImageView imageView = (ImageView) findViewById(R.id.pillow_background);
+     imageView.setAlpha(alpha);
+     Log.d("myTag",(Float.toString(alpha)));
+
+     //For "red" imageview
+     alpha = (float)((100.00-p1.Health())/100.00);
+     ImageView imageView2 = (ImageView) findViewById(R.id.red_blood);
+     imageView2.setAlpha(alpha);
+     Log.d("myTag",(Float.toString(alpha)));
+
+     }
+     */
+
 
 
 }
