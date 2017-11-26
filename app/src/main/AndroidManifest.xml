@@ -20,6 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PillowsSelection" />
+        <activity android:name=".PillowSmash" />
+        <activity android:name=".ExitScene"></activity>
     </application>
 
 </manifest>

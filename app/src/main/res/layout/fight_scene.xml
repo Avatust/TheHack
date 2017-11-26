@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button_increase"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:onClick="HitPillow"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/pillow_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/pillow_background"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/pillow_0006_grey" />
+
+    <ProgressBar
+        android:id="@+id/punch_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/punch_text"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:contentDescription="@string/punch_text"
+        android:text="@string/punch"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/red_blood"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_red_dark"
+        android:contentDescription="@string/blood"
+        android:visibility="visible"
+        app:srcCompat="@android:color/holo_red_dark" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button" />
+
+</FrameLayout>

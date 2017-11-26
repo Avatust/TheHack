@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.thehack.PillowsSelection">
+
+
+    <LinearLayout
+        android:id="@+id/layout_crop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/selection_header"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:contentDescription="@string/text_header"
+            android:text="@string/select_the_most_relaxing_color"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="429dp">
+
+            <ImageView
+                android:id="@+id/bigSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/selectedimage"
+                app:srcCompat="@drawable/pillow_0006_grey" />
+        </GridLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/purple_selection"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/purple_pillow_string_pink_pillow_selection"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/pillow_0000_purple" />
+
+            <ImageButton
+                android:id="@+id/yellow_selection"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/yellow_pillow_selection"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/pillow_0001_yellow" />
+
+            <ImageButton
+                android:id="@+id/red_selection"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/red_pillow_string_pink_pillow_selection"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/pillow_0002_red" />
+
+            <ImageButton
+                android:id="@+id/pink_selection"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/pink_string_pink_pillow_selection"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/pillow_0003_pink" />
+
+            <ImageButton
+                android:id="@+id/green_selection"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/green_pillow_selection"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/pillow_0004_green" />
+
+            <ImageButton
+                android:id="@+id/blue_selection"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/blue_pillow_selection"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/pillow_0005_blue" />
+
+            <ImageButton
+                android:id="@+id/gray_selection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/gray_pillow_selection"
+                android:onClick="choosePillow"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/pillow_0006_grey" />
+        </TableRow>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
