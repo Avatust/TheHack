@@ -1,7 +1,11 @@
 package com.example.thehack;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +21,19 @@ import android.widget.ProgressBar;
  * status bar and navigation/system bar) with user interaction.
  */
 public class KillThePillow extends AppCompatActivity {
+    void requestNeededPermissions()
+    {
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // No explanation needed, we can request the permission.
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},1);
+
+        }
+    }
     /* Every class deserves an own pillow! */
     private Pillow p1 = new Pillow();
     /**
@@ -89,12 +106,24 @@ public class KillThePillow extends AppCompatActivity {
         }
     };
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         InitializePillow();
 
         super.onCreate(savedInstanceState);
+
+        requestNeededPermissions();
+
+        Connectivity connection = new Connectivity();
+        connection.initMds(this);
+        Log.i("mds", "initialized");
+        connection.connectTo("0C:8C:DC:21:61:B3");
+        Log.i("mds", "connected");
+        connection.subscribe("174630000643",this);
+        Log.i("mds", "subscribing");
 
         setContentView(R.layout.launchscreen);
 
