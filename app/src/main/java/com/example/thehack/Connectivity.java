@@ -83,7 +83,8 @@ public class Connectivity {
                     public void onNotification(String data) {
                         Log.d(LOG_TAG, "onNotification(): " + data);
 
-                        int impactForce = 0; //=JSONPARSE(data)...somehow;
+                        int impactForce = Integer.parseInt(
+                                data.substring(data.indexOf("\"Body\": ")+8, data.indexOf(", \"Uri\"")));
 
                     }
 
