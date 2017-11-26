@@ -83,7 +83,7 @@ public class Connectivity {
                     public void onNotification(String data) {
                         Log.d(LOG_TAG, "onNotification(): " + data);
 
-                       // int impactForce = JSONPARSE(data)...somehow;
+                        int impactForce = 0; //=JSONPARSE(data)...somehow;
 
                     }
 
